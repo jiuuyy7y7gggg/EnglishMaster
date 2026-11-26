@@ -1,1 +1,240 @@
 
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Master</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Tahoma, Arial;
+  background: #f2f5ff;
+  color: #172554;
+}
+header {
+  background: #172554;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+}
+header h1 {
+  font-size: 30px;
+  margin: 5px;
+}
+header p {
+  color: #bfdbfe;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 15px;
+  background: white;
+}
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 17px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+main {
+  max-width: 850px;
+  margin: auto;
+  padding: 18px;
+}
+.card {
+  background: white;
+  padding: 22px;
+  margin: 15px 0;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px #00000010;
+}
+h2 {
+  color: #1d4ed8;
+}
+.word {
+  background: #eff6ff;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 9px;
+}
+input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+.section {
+  display: none;
+}
+.section.active {
+  display: block;
+}
+footer {
+  text-align: center;
+  background: #172554;
+  color: white;
+  padding: 22px;
+  margin-top: 30px;
+}
+.english {
+  direction: ltr;
+  text-align: left;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>English Master</h1>
+<p>انگلیسی را حرفه‌ای یاد بگیر!</p>
+<p>Learn English Every Day</p>
+</header>
+
+<nav>
+<button onclick="showPage('home')">خانه</button>
+<button onclick="showPage('vocab')">لغات</button>
+<button onclick="showPage('grammar')">گرامر</button>
+<button onclick="showPage('speaking')">مکالمه</button>
+<button onclick="showPage('practice')">تمرین</button>
+</nav>
+
+<main>
+
+<div id="home" class="section active">
+<div class="card">
+<h2>به English Master خوش آمدی!</h2>
+<p>اینجا می‌توانی انگلیسی را از سطح مبتدی تا پیشرفته یاد بگیری.</p>
+<p>هر روز تمرین کن و پیشرفتت را ببین.</p>
+</div>
+
+<div class="card">
+<h2>دوره‌های آموزشی</h2>
+<p>📚 لغات روزمره</p>
+<p>📖 گرامر انگلیسی</p>
+<p>🎤 مکالمه و Speaking</p>
+<p>🎧 Listening</p>
+<p>⚽ انگلیسی فوتبال</p>
+</div>
+</div>
+
+<div id="vocab" class="section">
+<div class="card">
+<h2>لغات کاربردی روزمره</h2>
+
+<div class="word">Actually = در واقع</div>
+<div class="word">Probably = احتمالاً</div>
+<div class="word">Although = اگرچه</div>
+<div class="word">Instead = به جای آن</div>
+<div class="word">Especially = مخصوصاً</div>
+<div class="word">Improve = پیشرفت کردن</div>
+<div class="word">Opportunity = فرصت</div>
+<div class="word">Available = در دسترس</div>
+</div>
+</div>
+
+<div id="grammar" class="section">
+<div class="card">
+<h2>آموزش گرامر</h2>
+
+<h3>Present Simple</h3>
+<p>برای عادت‌ها و کارهای روزمره</p>
+<p class="english">I play football every day.</p>
+<p>من هر روز فوتبال بازی می‌کنم.</p>
+
+<hr>
+
+<h3>Past Simple</h3>
+<p>برای اتفاقات گذشته</p>
+<p class="english">I watched a movie yesterday.</p>
+<p>من دیروز فیلم تماشا کردم.</p>
+
+<hr>
+
+<h3>Future Simple</h3>
+<p>برای آینده</p>
+<p class="english">I will learn English.</p>
+<p>من انگلیسی یاد خواهم گرفت.</p>
+</div>
+</div>
+
+<div id="speaking" class="section">
+<div class="card">
+<h2>مکالمه روزمره</h2>
+
+<p class="english">How's it going?</p>
+<p>اوضاع چطوره؟</p>
+
+<p class="english">I'm doing pretty well.</p>
+<p>من خیلی خوبم.</p>
+
+<p class="english">What do you mean?</p>
+<p>منظورت چیه؟</p>
+
+<p class="english">That makes sense.</p>
+<p>منطقیه.</p>
+
+<p class="english">I totally agree.</p>
+<p>کاملاً موافقم.</p>
+</div>
+</div>
+
+<div id="practice" class="section">
+<div class="card">
+<h2>تمرین لغات</h2>
+<p>معنی کلمه زیر چیست؟</p>
+<h2 class="english">Improve</h2>
+
+<input id="answer" placeholder="معنی فارسی را بنویس">
+
+<button onclick="checkAnswer()">بررسی جواب</button>
+
+<p id="result"></p>
+</div>
+</div>
+
+</main>
+
+<footer>
+<p>English Master</p>
+<p>Learn More. Speak Better.</p>
+</footer>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.section').forEach(s => {
+    s.classList.remove('active');
+  });
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function checkAnswer() {
+  let answer = document.getElementById('answer').value.trim();
+  let result = document.getElementById('result');
+
+  if (answer.includes('پیشرفت')) {
+    result.innerHTML = 'آفرین! جواب درست است 🎉';
+    result.style.color = 'green';
+  } else {
+    result.innerHTML = 'دوباره تلاش کن. معنی Improve می‌شود پیشرفت کردن.';
+    result.style.color = 'red';
+  }
+}
+</script>
+
+</body>
+</html>
